@@ -1,0 +1,36 @@
+# AI / Agent artifacts
+.gemini/
+.antigravity/
+.cursor/
+.copilot/
+PLAN.md
+WALKTHROUGH.md
+*.tempmediaStorage/
+
+# Source images (originals — only optimized copies in site/public)
+arun.jpeg
+*.png
+!site/**/*.png
+
+# Next.js
+site/.next/
+site/out/
+site/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PDF (original CV)
+*.pdf
