@@ -186,7 +186,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: calc(var(--header-height) + var(--space-8)) var(--space-7) var(--space-8);
+  padding: calc(var(--header-height) + var(--space-8)) var(--space-8) var(--space-8);
   position: relative;
   max-width: 600px;
   margin: 0 auto;
@@ -313,8 +313,9 @@
 }
 
 @media (max-width: 480px) {
-  .container { padding: 0 var(--space-4); }
+  .container { padding: 0 var(--space-5); }
   .logo { font-size: 1.2rem; }
-  .mobileLink { font-size: 2.1rem; }
-  .mobileMenuInner { padding-left: var(--space-5); padding-right: var(--space-5); }
+  .mobileLink { font-size: 2.1rem; gap: var(--space-3); }
+  .mobileLinkNum { min-width: 22px; }
+  .mobileMenuInner { padding-left: 28px; padding-right: 28px; }
 }
