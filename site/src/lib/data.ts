@@ -257,7 +257,7 @@ export const skills: SkillCategory[] = [
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Career", href: "/career" },
+  { label: "My Career", href: "/career" },
   { label: "Publications", href: "/publications" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },

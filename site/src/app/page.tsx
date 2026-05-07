@@ -1,56 +1,105 @@
 "use client";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Briefcase } from "lucide-react";
+import { ArrowRight, BookOpen, Briefcase, MapPin } from "lucide-react";
 import { profile, stats } from "@/lib/data";
 import StatCounter from "@/components/StatCounter/StatCounter";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import styles from "./page.module.css";
-import { useEffect, useState } from "react";
+
+const BASE = "/arun-adwani";
 
 export default function Home() {
-  const [titleIndex, setTitleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % profile.rotatingTitles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className={styles.page}>
-      {/* Hero */}
+      {/* Hero — Editorial Split Layout */}
       <section className={styles.hero}>
-        <div className={styles.heroBg}>
-          <div className={styles.gradientOrb1} />
-          <div className={styles.gradientOrb2} />
-          <div className={styles.gradientOrb3} />
+        {/* Massive decorative monogram */}
+        <div className={styles.monogram} aria-hidden="true">AA</div>
+
+        {/* Vertical side rail */}
+        <div className={styles.sideRail} aria-hidden="true">
+          <span className={styles.railTop}>EST. 2018 — UK</span>
+          <span className={styles.railMid}>PORTFOLIO</span>
+          <span className={styles.railBottom}>VOL. 01</span>
         </div>
 
-        <div className={styles.heroContent}>
-          <p className={styles.greeting}>Hello, I&apos;m</p>
-          <h1 className={styles.name}>{profile.name}</h1>
-          <div className={styles.titleRotator}>
-            {profile.rotatingTitles.map((title, i) => (
-              <span
-                key={title}
-                className={`${styles.rotatingTitle} ${i === titleIndex ? styles.titleActive : ""}`}
-              >
-                {title}
+        <div className={styles.heroInner}>
+          {/* Photo Column */}
+          <div className={styles.photoColumn}>
+            <div className={styles.photoFrame}>
+              <span className={styles.frameCornerTL} />
+              <span className={styles.frameCornerTR} />
+              <span className={styles.frameCornerBL} />
+              <span className={styles.frameCornerBR} />
+              <div className={styles.photoWrap}>
+                <img
+                  src={`${BASE}/images/arun-profile.png`}
+                  alt="Arun Adwani"
+                  className={styles.photo}
+                />
+              </div>
+            </div>
+            <p className={styles.photoCaption}>
+              <span className={styles.photoDot} />
+              Currently in Kettering, UK
+            </p>
+          </div>
+
+          {/* Content Column */}
+          <div className={styles.contentColumn}>
+            <div className={styles.eyebrowRow}>
+              <span className={styles.eyebrowLine} />
+              <span className={styles.eyebrow}>Finance Professional &amp; Researcher</span>
+            </div>
+
+            <h1 className={styles.name}>
+              <span className={styles.nameFirst}>Arun</span>
+              <span className={styles.nameLast}>
+                Adwani
+                <span className={styles.nameSwash} aria-hidden="true">.</span>
               </span>
-            ))}
+            </h1>
+
+            <div className={styles.tagline}>
+              <em>Building bridges between</em> finance, research <em>and</em> fintech.
+            </div>
+
+            <div className={styles.credentials}>
+              {["CPA", "ACCA", "MSc FinTech"].map((cred) => (
+                <span key={cred} className={styles.credBadge}>{cred}</span>
+              ))}
+            </div>
+
+            <p className={styles.bio}>{profile.bio}</p>
+
+            <div className={styles.metaRow}>
+              <span className={styles.metaItem}>
+                <MapPin size={13} />
+                United Kingdom
+              </span>
+              <span className={styles.metaDivider} />
+              <span className={styles.metaItem}>
+                <Briefcase size={13} />
+                NHS Financial Planner
+              </span>
+            </div>
+
+            <div className={styles.ctaRow}>
+              <Link href="/publications" className={styles.ctaPrimary}>
+                <BookOpen size={16} />
+                View Publications
+              </Link>
+              <Link href="/contact" className={styles.ctaSecondary}>
+                Get in Touch
+                <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
-          <p className={styles.heroBio}>{profile.bio}</p>
-          <div className={styles.heroCtas}>
-            <Link href="/publications" className={styles.ctaPrimary}>
-              <BookOpen size={18} />
-              View Publications
-            </Link>
-            <Link href="/contact" className={styles.ctaSecondary}>
-              Get in Touch
-              <ArrowRight size={18} />
-            </Link>
-          </div>
+        </div>
+
+        <div className={styles.scrollHint} aria-hidden="true">
+          <span className={styles.scrollLabel}>Scroll</span>
+          <div className={styles.scrollLine} />
         </div>
       </section>
 
@@ -73,40 +122,33 @@ export default function Home() {
       {/* Quick Links */}
       <ScrollReveal>
         <section className={styles.quickLinks}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>
-              Explore My <span className="text-gradient">Journey</span>
-            </h2>
+          <div className={styles.linksContainer}>
+            <p className={styles.linksEyebrow}>— Navigate</p>
+            <h2 className={styles.linksTitle}>Explore the Work</h2>
             <div className={styles.cardsGrid}>
               <Link href="/career" className={styles.quickCard}>
-                <div className={styles.quickCardIcon}>
-                  <Briefcase size={28} />
+                <span className={styles.cardNumber}>01</span>
+                <div className={styles.cardBody}>
+                  <h3>My Career</h3>
+                  <p>7+ years across NHS, Columbia Threadneedle, banking, and fintech</p>
                 </div>
-                <h3>Career Timeline</h3>
-                <p>7+ years across NHS, Columbia Threadneedle, banking, and fintech</p>
-                <span className={styles.cardArrow}>
-                  Explore <ArrowRight size={16} />
-                </span>
+                <ArrowRight size={18} className={styles.cardArrow} />
               </Link>
               <Link href="/publications" className={styles.quickCard}>
-                <div className={styles.quickCardIcon}>
-                  <BookOpen size={28} />
+                <span className={styles.cardNumber}>02</span>
+                <div className={styles.cardBody}>
+                  <h3>Research &amp; Publications</h3>
+                  <p>6 published papers on SSRN with 24+ citations in fintech and finance</p>
                 </div>
-                <h3>Research & Publications</h3>
-                <p>6 published papers on SSRN with 24+ citations in fintech and finance</p>
-                <span className={styles.cardArrow}>
-                  Read More <ArrowRight size={16} />
-                </span>
+                <ArrowRight size={18} className={styles.cardArrow} />
               </Link>
               <Link href="/about" className={styles.quickCard}>
-                <div className={styles.quickCardIcon}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span className={styles.cardNumber}>03</span>
+                <div className={styles.cardBody}>
+                  <h3>Qualifications</h3>
+                  <p>MSc FinTech, CPA, ACCA, BSc Applied Accounting — 4 professional credentials</p>
                 </div>
-                <h3>Qualifications</h3>
-                <p>MSc FinTech, CPA, ACCA, BSc Applied Accounting — 4 professional credentials</p>
-                <span className={styles.cardArrow}>
-                  View All <ArrowRight size={16} />
-                </span>
+                <ArrowRight size={18} className={styles.cardArrow} />
               </Link>
             </div>
           </div>
