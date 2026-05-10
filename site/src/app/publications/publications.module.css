@@ -154,7 +154,7 @@
   background: var(--color-primary-glow);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
-  border: 1px solid rgba(212, 168, 83, 0.3);
+  border: 1px solid rgba(30, 58, 138, 0.3);
   white-space: nowrap;
 }
 

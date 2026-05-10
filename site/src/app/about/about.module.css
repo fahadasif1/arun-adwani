@@ -131,7 +131,7 @@
   font-weight: var(--font-semibold);
   color: var(--color-primary);
   background: var(--color-primary-glow);
-  border: 1px solid rgba(212, 168, 83, 0.3);
+  border: 1px solid rgba(30, 58, 138, 0.3);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   text-transform: uppercase;

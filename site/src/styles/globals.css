@@ -1,6 +1,6 @@
 /* ============================================
    DESIGN SYSTEM — Arun Adwani
-   Dark Professional Theme with Gold Accents
+   Light Editorial Theme with Corporate Navy Accents
    ============================================ */
 
 /* --- Google Fonts --- */
@@ -9,31 +9,31 @@
 /* --- CSS Custom Properties --- */
 :root {
   /* Colors */
-  --color-bg: #0a0f1c;
-  --color-bg-secondary: #111827;
-  --color-bg-tertiary: #1a2332;
-  --color-surface: #1e293b;
-  --color-surface-hover: #253347;
-  --color-border: #2a3a4e;
-  --color-border-light: #334155;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: #f8fafc;
+  --color-surface: #f1f5f9;
+  --color-surface-hover: #e2e8f0;
+  --color-border: #e2e8f0;
+  --color-border-light: #cbd5e1;
 
-  /* Accent */
-  --color-primary: #d4a853;
-  --color-primary-light: #e8c675;
-  --color-primary-dark: #b8912e;
-  --color-primary-glow: rgba(212, 168, 83, 0.15);
-  --color-primary-glow-strong: rgba(212, 168, 83, 0.3);
+  /* Accent — Corporate Navy */
+  --color-primary: #1e3a8a;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #172554;
+  --color-primary-glow: rgba(30, 58, 138, 0.12);
+  --color-primary-glow-strong: rgba(30, 58, 138, 0.25);
 
   /* Text */
-  --color-text: #e5e7eb;
-  --color-text-heading: #f9fafb;
-  --color-text-muted: #9ca3af;
-  --color-text-subtle: #6b7280;
+  --color-text: #334155;
+  --color-text-heading: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-subtle: #64748b;
 
   /* Semantic */
-  --color-success: #34d399;
-  --color-info: #60a5fa;
-  --color-warning: #fbbf24;
+  --color-success: #16a34a;
+  --color-info: #2563eb;
+  --color-warning: #d97706;
 
   /* Typography */
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -84,12 +84,12 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.35);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px var(--color-primary-glow);
-  --shadow-glow-strong: 0 0 30px var(--color-primary-glow-strong);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 24px rgba(15, 23, 42, 0.10);
+  --shadow-xl: 0 20px 40px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 24px var(--color-primary-glow);
+  --shadow-glow-strong: 0 0 36px var(--color-primary-glow-strong);
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -102,8 +102,8 @@
   --header-height: 72px;
 
   /* Glass */
-  --glass-bg: rgba(17, 24, 39, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(15, 23, 42, 0.08);
   --glass-blur: 16px;
 }
 
@@ -136,7 +136,7 @@ body {
 /* Selection */
 ::selection {
   background-color: var(--color-primary);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 /* Scrollbar */
